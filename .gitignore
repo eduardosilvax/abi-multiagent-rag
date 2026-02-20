@@ -1,0 +1,66 @@
+# ── Secrets / Environment ────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+*.whl
+pip-log.txt
+
+# ── Testing / Coverage ─────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+test-results.xml
+junit.xml
+
+# ── IDEs / Editors ─────────────────────────────────────
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# ── Linters / Type checkers ────────────────────────────
+.ruff_cache/
+.mypy_cache/
+.pytype/
+
+# ── Docker volumes (local) ─────────────────────────────
+qdrant_storage/
+qdrant_data/
+redis_data/
+
+# ── Node / Frontend ────────────────────────────────────
+node_modules/
+frontend/node_modules/
+frontend/.svelte-kit/
+frontend/build/
+
+# ── Misc ───────────────────────────────────────────────
+*.log
+*.bak
+*.tmp
+*.swp
+.copilot/

@@ -1,0 +1,26 @@
+[project]
+name = "abi-multiagent-rag"
+version = "1.0.0"
+description = "Multi-Agent RAG system with compliance, cost-aware routing, and anti-hallucination validation."
+requires-python = ">=3.12"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]  # line length handled by formatter
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = [
+    "--ignore=tests/test_compliance_live.py",
+    "--ignore=tests/e2e_live.py",
+    "-v",
+    "--tb=short",
+]

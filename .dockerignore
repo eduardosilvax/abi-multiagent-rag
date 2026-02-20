@@ -1,0 +1,59 @@
+# ── Version control ─────────────────────────────────────
+.git/
+.gitignore
+.github/
+
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.eggs/
+.venv/
+venv/
+env/
+
+# ── Environment / Secrets ──────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── IDEs / Editors ─────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Docker volumes (local) ─────────────────────────────
+qdrant_data/
+redis_data/
+qdrant_storage/
+
+# ── Testing / Coverage ─────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+test-results.xml
+
+# ── Linter caches ──────────────────────────────────────
+.ruff_cache/
+.mypy_cache/
+
+# ── Files not needed in backend image ──────────────────
+tests/
+evals/
+docs/
+k8s/
+frontend/
+examples/
+*.md
+*.log
+*.bak
+.editorconfig
+.copilot/
