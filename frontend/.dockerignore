@@ -1,0 +1,29 @@
+node_modules/
+build/
+.svelte-kit/
+dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Version control
+.git/
+.gitignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Not needed in frontend image
+*.md
+tests/
