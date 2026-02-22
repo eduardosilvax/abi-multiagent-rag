@@ -21,13 +21,12 @@ jobs:
           - 6379:6379
 
     env:
-      QDRANT_URL: http://localhost:6333
-      REDIS_URL: redis://localhost:6379
+      QDRANT_HOST: localhost
+      QDRANT_PORT: "6333"
+      REDIS_HOST: localhost
+      REDIS_PORT: "6379"
       OPENAI_API_KEY: sk-test-fake-key-for-ci
       LLM_PROVIDER: openai
-      EMBEDDING_MODEL: text-embedding-3-small
-      LLM_MODEL_CHEAP: gpt-4o-mini
-      LLM_MODEL_PREMIUM: gpt-4o
       PYTHONPATH: .
 
     steps:
@@ -40,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -e ".[dev]"
+          pip install -r requirements.txt
 
       - name: Lint
         run: ruff check src/ tests/
