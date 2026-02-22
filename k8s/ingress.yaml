@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: abi-assistant-ingress
+  namespace: abi
+  annotations:
+    nginx.ingress.kubernetes.io/rate-limit: "30"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: abi-assistant.internal.abinbev.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: abi-assistant
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - abi-assistant.internal.abinbev.com
+      secretName: abi-assistant-tls

@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: abi-assistant-config
+  namespace: abi
+data:
+  LLM_PROVIDER: "azure"
+  LLM_CHEAP_MODEL: "gpt-4.1-nano"
+  LLM_PREMIUM_MODEL: "gpt-4.1"
+  EMBEDDING_MODEL: "text-embedding-3-small"
+  QDRANT_HOST: "qdrant.abi.svc.cluster.local"
+  QDRANT_PORT: "6333"
+  REDIS_HOST: "redis.abi.svc.cluster.local"
+  REDIS_PORT: "6379"
+  CHUNK_SIZE: "512"
+  CHUNK_OVERLAP: "64"
+  TOP_K_RESULTS: "5"
+  AZURE_OPENAI_API_VERSION: "2024-12-01-preview"
+  AZURE_DEPLOYMENT_CHEAP: "gpt-4o-mini"
+  AZURE_DEPLOYMENT_PREMIUM: "gpt-4o"
+  AZURE_DEPLOYMENT_EMBEDDING: "text-embedding-3-small"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: abi-assistant-secrets
+  namespace: abi
+type: Opaque
+stringData:
+  # Replace with actual secrets (or use Azure Key Vault / Sealed Secrets)
+  AZURE_OPENAI_API_KEY: "<your-azure-openai-key>"
+  AZURE_OPENAI_ENDPOINT: "https://<resource>.openai.azure.com/"
+  OPENAI_API_KEY: "<your-openai-key>"
